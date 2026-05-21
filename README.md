@@ -138,22 +138,22 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 
 #### 加载目标奶牛模型并创建纹理
 
-![加载目标奶牛模型并创建纹理]<img width="950" height="412" alt="image" src="https://github.com/user-attachments/assets/a3f3c8d9-6421-4f2f-80d5-68016f740b87" />
+<img width="950" height="412" alt="image" src="https://github.com/user-attachments/assets/a3f3c8d9-6421-4f2f-80d5-68016f740b87" />
 
 
 #### 联合优化循环
 
 RGB + 剪影联合优化过程中的对比：
 
-![联合优化循环]<img width="1479" height="511" alt="image" src="https://github.com/user-attachments/assets/60df24f1-c579-4347-ae69-9657ed77ed7e" />
+<img width="1479" height="511" alt="image" src="https://github.com/user-attachments/assets/60df24f1-c579-4347-ae69-9657ed77ed7e" />
 
 
 #### 球变牛变形过程
 
 从球体逐渐变形为奶牛的完整过程：
 
-![球变牛变形过程](<img width="2351" height="1229" alt="image" src="https://github.com/user-attachments/assets/2a1b80a2-e067-4e94-949c-573507785895" />
-)
+<img width="2351" height="1229" alt="image" src="https://github.com/user-attachments/assets/d3717a87-ee54-45c5-a5e9-22e8b7e5284f" />
+
 
 #### 最终结果多视角展示
 
