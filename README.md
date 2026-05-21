@@ -1,6 +1,6 @@
 # 可微分渲染与网格优化
 
-> 将一个初始的"球体"通过梯度下降，逐渐"捏"成一头"奶牛"的形状。
+> 将一个初始的球体通过梯度下降，逐渐变成一头奶牛的形状。
 
 ## 📋 实验目标
 
@@ -99,10 +99,10 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 
 #### 1. 注册并领取免费算力
 
-1. 打开浏览器，访问 [魔搭社区 (ModelScope)](https://modelscope.cn/)
-2. 点击右上角的"登录/注册"，使用手机号或阿里云账号快捷登录
-3. 登录后，点击顶部导航栏的 **"我的Notebook"**
-4. 在弹出的页面中，找到 **"免费算力"** 区域，点击"启动"
+1. 打开 [魔搭社区 (ModelScope)](https://modelscope.cn/)
+2. 点击注册
+3. 打开 **"我的Notebook"**
+4. 找到 **"免费算力"** 区域，点击"启动"
 
 #### 2. 基础配置
 
@@ -111,12 +111,11 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 3. 将文件直接拖拽到云平台中
 4. 在模型同目录下新建 `.ipynb` 文件
 
-> **中间状态查看**：优化过程中生成的 `.obj` 文件可以下载到本地，使用 [MeshLab](https://www.meshlab.net/) 软件查看三维模型的变形过程。
-
-## 🚀 使用方法
+## 📊 实验结果
 
 ### 实验一：基础形状优化
 
+### 形状优化过程
 运行 `main.ipynb`，执行基于剪影的形状优化：
 
 1. 加载目标奶牛模型 `cow.obj`
@@ -124,8 +123,14 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 3. 在 20 个均匀分布的视角下渲染目标剪影
 4. 通过梯度下降优化顶点偏移量
 5. 每 20 轮迭代保存一次中间结果到 `output_meshes/`
-
-### 实验二：联合纹理优化（选做）
+   
+| 迭代次数 | 状态 |
+| :--- | :--- |
+| Epoch 0 | 初始球体 |
+| Epoch 100 | 开始出现奶牛轮廓 |
+| Epoch 200 | 形状逐渐清晰 |
+| Epoch 300 | 优化完成，接近目标形状 |
+### 实验二：联合纹理优化
 
 运行 `texture_optimization.ipynb`，执行形状与纹理的联合优化：
 
@@ -134,16 +139,6 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 3. 使用 SoftPhongShader 进行 RGB 渲染
 4. 每 300 轮迭代保存一次中间结果到 `sphere_to_cow/`
 
-## 📊 实验结果
-
-### 形状优化过程
-
-| 迭代次数 | 状态 |
-| :--- | :--- |
-| Epoch 0 | 初始球体 |
-| Epoch 100 | 开始出现奶牛轮廓 |
-| Epoch 200 | 形状逐渐清晰 |
-| Epoch 300 | 优化完成，接近目标形状 |
 
 ### 目标剪影图
 
