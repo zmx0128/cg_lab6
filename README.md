@@ -118,14 +118,8 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 | Epoch 200 | 形状逐渐清晰 |
 | Epoch 300 | 优化完成，接近目标形状 |
 
+<img width="794" height="394" alt="image" src="https://github.com/user-attachments/assets/197909fc-efca-4eeb-9956-078ac7185d8c" />
 
-<img width="2880" height="1704" alt="屏幕截图 2026-05-14 192104" src="https://github.com/user-attachments/assets/044dbe4a-bbb7-43e2-99a3-e97b2785eeb2" />
-
-#### 中间状态使用MeshLab查看：
-
-
-
-#### 当迭代次数为2000轮，中间状态：
 
 
 ### 实验二：联合纹理优化
