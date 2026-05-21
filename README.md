@@ -103,11 +103,13 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 ### 实验一：基础形状优化
 
 运行 `main.ipynb`，执行基于剪影的形状优化：
+
 1. 加载目标奶牛模型 `cow.obj`
 2. 初始化一个细分等级为 4 的球体网格
 3. 在 20 个均匀分布的视角下渲染目标剪影
 4. 通过梯度下降优化顶点偏移量
 5. 每 20 轮迭代保存一次中间结果到 `output_meshes/`
+
 #### 形状优化过程  
 | 迭代次数 | 状态 |
 | :--- | :--- |
@@ -116,7 +118,13 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 | Epoch 200 | 形状逐渐清晰 |
 | Epoch 300 | 优化完成，接近目标形状 |
 
+
 <img width="2880" height="1704" alt="屏幕截图 2026-05-14 192104" src="https://github.com/user-attachments/assets/044dbe4a-bbb7-43e2-99a3-e97b2785eeb2" />
+
+#### 中间状态使用MeshLab查看：
+
+
+
 
 ### 实验二：联合纹理优化
 
@@ -128,35 +136,32 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 4. 每 300 轮迭代保存一次中间结果到 `sphere_to_cow/`
 
 
-### 目标剪影图
+#### 加载目标奶牛模型并创建纹理
 
-运行 `main.ipynb` 后，优化过程中的剪影对比效果：
+![加载目标奶牛模型并创建纹理]<img width="950" height="412" alt="image" src="https://github.com/user-attachments/assets/a3f3c8d9-6421-4f2f-80d5-68016f740b87" />
 
-![目标剪影图](images/silhouette_comparison.png)
 
-### 目标模型多视角展示
-
-从多个角度观察奶牛模型：
-
-![目标模型多视角](images/target_model_views.png)
-
-### 初始球体 vs 目标奶牛
-
-![初始球体与目标奶牛对比](images/initial_vs_target.png)
-
-### 联合优化过程
+#### 联合优化循环
 
 RGB + 剪影联合优化过程中的对比：
 
-![联合优化过程](images/optimization_process.png)
+![联合优化循环]<img width="1479" height="511" alt="image" src="https://github.com/user-attachments/assets/60df24f1-c579-4347-ae69-9657ed77ed7e" />
 
-### 球变牛变形过程
+
+#### 球变牛变形过程
 
 从球体逐渐变形为奶牛的完整过程：
 
-![球变牛变形过程](images/deformation_process.png)
+![球变牛变形过程](<img width="2351" height="1229" alt="image" src="https://github.com/user-attachments/assets/2a1b80a2-e067-4e94-949c-573507785895" />
+)
 
-### 损失曲线
+#### 最终结果多视角展示
+
+从多个角度观察奶牛模型：
+
+<img width="1554" height="820" alt="image" src="https://github.com/user-attachments/assets/5823402d-0822-4d68-8c8d-6d3d134540c6" />
+
+#### 损失曲线
 
 优化过程中监控以下损失项：
 - **剪影损失**：预测剪影与目标剪影的 MSE
