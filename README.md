@@ -123,8 +123,9 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 
 #### 中间状态使用MeshLab查看：
 
-<img width="2351" height="1229" alt="image" src="https://github.com/user-attachments/assets/e3597b46-7c0e-4a99-aa39-4247867b4609" />
 
+
+#### 当迭代次数为2000轮，中间状态：
 
 
 ### 实验二：联合纹理优化
