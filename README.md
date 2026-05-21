@@ -95,41 +95,29 @@ pip install "git+https://gitee.com/hongwenzhang/pytorch3d.git" --no-build-isolat
 
 ### ModelScope 云平台配置
 
-阿里云魔搭社区（ModelScope）是一个稳定、免费、且自带预装深度学习环境的纯净云平台。它为实名认证用户提供免费的 GPU 算力（基于阿里云 DSW 实验室），能够尽可能避免不同操作系统下环境配置带来的困难。
+阿里云魔搭社区（ModelScope）是一个稳定、免费、且自带预装深度学习环境的纯净云平台。它为实名认证用户提供免费的 GPU 算力（基于阿里云 DSW 实验室），能够尽可能避免不同操作系统下环境配置带来的困难。[魔搭社区 (ModelScope)](https://modelscope.cn/)
 
-#### 1. 注册并领取免费算力
-
-1. 打开 [魔搭社区 (ModelScope)](https://modelscope.cn/)
-2. 点击注册
-3. 打开 **"我的Notebook"**
-4. 找到 **"免费算力"** 区域，点击"启动"
-
-#### 2. 基础配置
-
-1. 等待几分钟，机器启动完成后，点击 **"查看Notebook"** 进入网页版的编程界面（JupyterLab）
-2. 下载 `cow.obj` 文件
-3. 将文件直接拖拽到云平台中
-4. 在模型同目录下新建 `.ipynb` 文件
 
 ## 📊 实验结果
 
 ### 实验一：基础形状优化
 
-### 形状优化过程
 运行 `main.ipynb`，执行基于剪影的形状优化：
-
 1. 加载目标奶牛模型 `cow.obj`
 2. 初始化一个细分等级为 4 的球体网格
 3. 在 20 个均匀分布的视角下渲染目标剪影
 4. 通过梯度下降优化顶点偏移量
 5. 每 20 轮迭代保存一次中间结果到 `output_meshes/`
-   
+#### 形状优化过程  
 | 迭代次数 | 状态 |
 | :--- | :--- |
 | Epoch 0 | 初始球体 |
 | Epoch 100 | 开始出现奶牛轮廓 |
 | Epoch 200 | 形状逐渐清晰 |
 | Epoch 300 | 优化完成，接近目标形状 |
+
+<img width="2880" height="1704" alt="屏幕截图 2026-05-14 192104" src="https://github.com/user-attachments/assets/044dbe4a-bbb7-43e2-99a3-e97b2785eeb2" />
+
 ### 实验二：联合纹理优化
 
 运行 `texture_optimization.ipynb`，执行形状与纹理的联合优化：
